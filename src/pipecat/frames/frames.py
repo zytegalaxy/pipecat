@@ -1533,3 +1533,18 @@ class ManuallySwitchServiceFrame(ServiceSwitcherFrame):
     """
 
     service: "FrameProcessor"
+
+
+@dataclass
+class WakeWordDetectionFrame(DataFrame):
+    """Frame emitted when a wake word is detected.
+
+    Parameters:
+        keyword: The detected keyword string.
+        keyword_index: Index of the detected keyword in the keywords list.
+        confidence: Detection confidence score (if available).
+    """
+
+    keyword: str
+    keyword_index: int
+    confidence: Optional[float] = None
